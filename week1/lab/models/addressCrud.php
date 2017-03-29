@@ -8,10 +8,10 @@ function readAllAddress()
            
 }
 
-function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $address_id, $birthday)
+function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday)
 {
    $db = dbconnect();
-    $stmt = $db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline = :addressline, city = :city, state = :state, zip = :zip, address_id = :address_id,birthday = :birthday");
+    $stmt = $db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline = :addressline, city = :city, state = :state, zip = :zip, birthday = :birthday");
     $binds = array(
         ":fullname" => $fullname,
         ":email" => $email,
@@ -19,7 +19,6 @@ function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $
          ":city" => $city,
          ":state" => $state,
          ":zip" => $zip,
-         ":address_id" => $address_id,
          ":birthday" => $birthday,
     );
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {

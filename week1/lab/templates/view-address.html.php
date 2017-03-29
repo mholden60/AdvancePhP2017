@@ -14,6 +14,6 @@
     </tr>
     
 <?php endforeach; ?>
-</table>>
+</table>
 <?php endif; ?>
  

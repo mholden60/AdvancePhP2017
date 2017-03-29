@@ -7,13 +7,12 @@
     <body>
         <?php
     
-       include './lab/models/dbconnect.php';
-       include '../lab/models/addressCrud.php';
-       include '../lab/models/dbconnect.php';
+       include './models/dbconnect.php';
+       include './models/addressCrud.php';
       
         $addresses = readAllAddress();
         
-        include './lab/templates/address-form.html.php';
+        include './templates/view-address.html.php';
         
         ?>
     </body>

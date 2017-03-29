@@ -13,8 +13,14 @@ function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $
    $db = dbconnect();
     $stmt = $db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline = :addressline, city = :city, state = :state, zip = :zip, address_id = :address_id,birthday = :birthday");
     $binds = array(
-        ":phone" => $phone,
-        ":phonetype" => $phoneType,
+        ":fullname" => $fullname,
+        ":email" => $email,
+         ":addressline1" => $addressline1,
+         ":city" => $city,
+         ":state" => $state,
+         ":zip" => $zip,
+         ":address_id" => $address_id,
+         ":birthday" => $birthday,
     );
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         return true;
@@ -22,5 +28,9 @@ function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $
     
     return false;
    
+}
+
+function getAllAddress() {
+    
 }
 

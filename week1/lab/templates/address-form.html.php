@@ -9,12 +9,12 @@
         State:
         <select name="state">
             <?php foreach ($states as $key => $value): ?>
-            <option value="<?php echo $key; ?>" <?php if($states = $key): ?> selected="selected" <?php endif; ?><?php echo $value; ?> </option>
+            <option value="<?php echo $key; ?>" <?php if($state == $key): ?> selected="selected" <?php endif; ?> ><?php echo $value; ?> </option>
             <?php endforeach; ?>
         </select>
         <br/>
          Zip: <input name="zip" value="<?php echo $zip; ?>" /> <br>
          Birthday: <input name="birthday" type="date" value="<?php echo $birthday;?>" /><br/>
          <input type="submit" value="submit" class="btn btn-primary" />
-         </form>
+         </form> ?
 </div>

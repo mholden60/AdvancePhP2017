@@ -31,27 +31,27 @@ and open the template in the editor.
         {
             if(empty($fullname))
             {
-                $error[] = 'Fullname is required';
+                $errors[] = 'Fullname is required';
             }
             if(filter_var($email, FILTER_VALIDATE_EMAIL)==false)
             {
-                $error[] = 'Email not vaild';
+                $errors[] = 'Email not vaild';
             }
             if(empty($addressline1))
             {
-                $error[] = 'addressline1 is required';
+                $errors[] = 'addressline1 is required';
             }
             if(empty($city))
             {
-                $error[] = 'city is required';
+                $errors[] = 'city is required';
             }
             if(empty($state))
             {
-                $error[] = 'state is required';
+                $errors[] = 'state is required';
             }
             if(!isZIPVALID($zip))
             {
-                $error[] = 'Zipcode not valid';
+                $errors[] = 'Zipcode not valid';
             }
             
             if (count($errors)===0)
@@ -69,12 +69,12 @@ and open the template in the editor.
                  }
                  else
                  {
-                     $error[] = 'Could not add to Database';
+                     $errors[] = 'Could not add to Database';
                  }
             }
         }
         include './templates/errors.html.php';
-        include './models/../templates/messages.html.php';
+        include './templates/messages.html.php';
         include './templates/address-form.html.php';
         ?>
     </body>

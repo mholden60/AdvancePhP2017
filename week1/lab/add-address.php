@@ -5,11 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+     
     <head>
         <meta charset="UTF-8">
         <title></title>
+
     </head>
     <body>
+       
         <?php
         require_once './models/dbconnect.php';
         require_once './models/util.php';
@@ -72,7 +75,13 @@ and open the template in the editor.
                      $errors[] = 'Could not add to Database';
                  }
             }
+            if(!isDateValid($birthday))
+            {
+              $errors[] = 'Birthday not valid';
+
+            }
         }
+        
         include './templates/errors.html.php';
         include './templates/messages.html.php';
         include './templates/address-form.html.php';

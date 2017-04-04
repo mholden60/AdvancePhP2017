@@ -12,7 +12,18 @@ and open the template in the editor.
 
     </head>
     <body>
-       
+     <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">LAB 1</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost/PhpProject1/week1/lab/index.php">Address List</a></li>
+      <li><a href="http://localhost/PhpProject1/week1/lab/add-address.php">Insert Address</a></li>
+
+    </ul>
+  </div>
+</nav>  
         <?php
         require_once './models/dbconnect.php';
         require_once './models/util.php';
@@ -75,7 +86,8 @@ and open the template in the editor.
                      $errors[] = 'Could not add to Database';
                  }
             }
-            if(!isDateValid($birthday))
+            if(!
+                    isDateValid($birthday))
             {
               $errors[] = 'Birthday not valid';
 

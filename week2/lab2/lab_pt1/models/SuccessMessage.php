@@ -11,6 +11,18 @@
  *
  * @author Mathew Holden
  */
-class SuccessMessage {
+class SuccessMessage extends Message {
     //put your code here
+    public function addMessage($key, $msg) {
+        
+    }
+
+    public function getAllMessages() {
+        
+    }
+
+    public function removeMessage($key) {
+        
+    }
+
 }

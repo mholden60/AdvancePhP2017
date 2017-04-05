@@ -37,7 +37,6 @@ and open the template in the editor.
         $state = filter_input(INPUT_POST, 'state');
         $zip = filter_input(INPUT_POST, 'zip');
         $birthday = filter_input(INPUT_POST, 'birthday');
-
         $errors = [];
         $states = getStates();
         

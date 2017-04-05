@@ -11,7 +11,7 @@
             
             $db = new DBSpring();
             $phones = $db->getAllPhones();
-            
+            //TEST COMMIT!!!!!!
             
             include './views/view-phones.html.php';
             

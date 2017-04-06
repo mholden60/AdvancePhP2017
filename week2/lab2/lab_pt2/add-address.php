@@ -9,7 +9,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-
+      <link rel="stylesheet" href='../lab_pt2/css/css/bootstrap.css' >
     </head>
     <body>
      <nav class="navbar navbar-default">
@@ -25,10 +25,15 @@ and open the template in the editor.
   </div>
 </nav>  
         <?php
-        require_once './models/dbconnect.php';
-        require_once './models/util.php';
-        require_once './models/addressCrud.php';
-        require_once './models/validation.php';
+        //require_once './models/dbconnect.php';
+       // require_once './models/util.php';
+        //require_once './models/addressCrud.php';
+       // require_once './models/validation.php';
+        require_once './autoload.php';
+        
+        $addresses = new Crud();
+        $util = new util();
+        $validation = new Validation();
         
         $fullname = filter_input(INPUT_POST, 'fullname');
         $email = filter_input(INPUT_POST, 'email');
@@ -38,9 +43,9 @@ and open the template in the editor.
         $zip = filter_input(INPUT_POST, 'zip');
         $birthday = filter_input(INPUT_POST, 'birthday');
         $errors = [];
-        $states = getStates();
+        $states = $util->getStates();
         
-        if(isPostRequest())
+        if($util->isPostRequest())
         {
             if(empty($fullname))
             {
@@ -62,11 +67,15 @@ and open the template in the editor.
             {
                 $errors[] = 'state is required';
             }
-            if(!isZIPVALID($zip))
+            if($validation->isZIPVALID($zip))
             {
                 $errors[] = 'Zipcode not valid';
             }
-            
+            if($validation->isDateValid($birthday))
+            {
+              $errors[] = 'Birthday not valid';
+
+            }
             if (count($errors)===0)
             {
                 if(createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday))
@@ -77,7 +86,6 @@ and open the template in the editor.
                     $city = '';
                     $state = '';
                     $zip = '';
-                  
                     $birthday = '';
                  }
                  else
@@ -85,12 +93,7 @@ and open the template in the editor.
                      $errors[] = 'Could not add to Database';
                  }
             }
-            if(!
-                    isDateValid($birthday))
-            {
-              $errors[] = 'Birthday not valid';
-
-            }
+            
         }
         
         include './templates/errors.html.php';

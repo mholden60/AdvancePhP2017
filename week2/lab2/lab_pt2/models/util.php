@@ -14,9 +14,10 @@
 class util {
     
     
-    function isPostRequest() {
+    function isPostRequest() 
+    {
     return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
-}
+    }
 
 
 function getStates(){

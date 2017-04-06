@@ -28,7 +28,7 @@ class AddressCrud implements ICrud {
     }
 
     public function delete() {
-        $stmt = $db->prepare("DELETE * From Address WHERE address_id = $address_id");
+        $stmt = $db->prepare("DELETE From address WHERE address_id = $address_id");
     }
 
     public function read() {

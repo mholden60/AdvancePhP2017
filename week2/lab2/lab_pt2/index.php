@@ -17,7 +17,7 @@
         <meta charset="UTF-8">
         <title></title>
         
-        <link rel="stylesheet" href="../lab/css/css/bootstrap.css"> 
+        <link rel="stylesheet" href='../lab_pt2/css/css/bootstrap.css' >
 
 </head>
     </head>

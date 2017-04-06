@@ -43,6 +43,9 @@ and open the template in the editor.
         
         if(isPostRequest())
         {
+            /**
+             * Checking to insure data is valid
+             */
             if(empty($fullname))
             {
                 $errors[] = 'Fullname is required';
@@ -86,14 +89,15 @@ and open the template in the editor.
                      $errors[] = 'Could not add to Database';
                  }
             }
-            if(!
-                    isDateValid($birthday))
+            if(isDateValid($birthday))
             {
               $errors[] = 'Birthday not valid';
 
             }
         }
-        
+        /**
+         * Including needed files
+         */
         include './templates/errors.html.php';
         include './templates/messages.html.php';
         include './templates/address-form.html.php';

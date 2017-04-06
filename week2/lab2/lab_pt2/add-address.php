@@ -15,11 +15,11 @@ and open the template in the editor.
      <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">LAB 1</a>
+      <a class="navbar-brand" href="#">LAB 2</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="http://localhost/PhpProject1/week1/lab/index.php">Address List</a></li>
-      <li><a href="http://localhost/PhpProject1/week1/lab/add-address.php">Insert Address</a></li>
+      <li class="active"><a href="http://localhost/PhpProject1/week2/lab2/lab_pt2/index.php">Address List</a></li>
+      <li><a href="http://localhost/PhpProject1/week2/lab2/lab_pt2/add-address.php">Insert Address</a></li>
 
     </ul>
   </div>
@@ -30,6 +30,7 @@ and open the template in the editor.
         //require_once './models/addressCrud.php';
        // require_once './models/validation.php';
         require_once './autoload.php';
+       // include './autoload.php';
         
         $addresses = new Crud();
         $util = new util();

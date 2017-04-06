@@ -1,4 +1,4 @@
-<?php if ( is_array($addresses) && count($addresses) > 0 ) : ?>
+<?php if ( is_array($address) && count($address) > 0 ) : ?>
 <h1>Address List</h1>
 
 
@@ -12,7 +12,7 @@
         <th>Zip</th>
         <th>Birthday</th>
     </tr>
-<?php foreach( $addresses as $row ) : ?>
+<?php foreach( $address as $row ) : ?>
 
    
     <tr>

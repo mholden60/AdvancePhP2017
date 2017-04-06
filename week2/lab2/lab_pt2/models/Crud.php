@@ -17,7 +17,13 @@ class Crud extends DB {
     }
     function getAllAddresses()
     {
-        $stmt = $this->getDb->prepare("SELECT * FROM address");
+        $stmt = $this->getDb()->prepare("SELECT * FROM address");
+            $results = array();
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
+       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    return $results;
     }
     
     function  createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday)

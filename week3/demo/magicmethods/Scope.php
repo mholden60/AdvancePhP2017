@@ -27,9 +27,9 @@ class Scope {
       } else { 
           return $this->data[$varName];
       }
-
+      var_dump($expression);
+   
    }
-
    public function __set($varName,$value){
       $this->data[$varName] = $value;
    }

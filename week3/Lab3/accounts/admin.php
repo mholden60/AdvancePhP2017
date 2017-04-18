@@ -8,15 +8,27 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+               <link rel="stylesheet" href="../accounts/css/css/bootstrap.css" />
     </head>
     <body>
+        <?php
+        session_start();
+        include './models/Validation.php';
+       
+        
+         if ( isLoggedIn() ) {
+            die('Access not allowed');
+        }
+        
+        ?>
         <h1>ADMIN PAGE</h1>
         <h2>Welcome</h2>
-        <?php
-       include './views/session-access.html.php';
+        
+       
         
 
-       
-        ?>
+      
+        
+        <button type="submit" > 
     </body>
 </html>

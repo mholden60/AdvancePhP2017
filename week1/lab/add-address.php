@@ -18,8 +18,8 @@ and open the template in the editor.
       <a class="navbar-brand" href="#">LAB 1</a>
     </div>
     <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Address List</a></li>
-      <li><a href="add-address.php">Insert Address</a></li>
+        <li class="active"><a href="./index.php">Address List</a></li>
+      <li><a href="./add-address.php">Insert Address</a></li>
 
     </ul>
   </div>

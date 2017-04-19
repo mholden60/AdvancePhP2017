@@ -11,14 +11,7 @@ class Validation {
 {
     $zipRegex = '/^[0-9]{5}$/';
     
-    function isLoggedIn($_SESSION) {
-    
-    if ( !isset($_SESSION['loggedin']) || $_SESSION['loggedin'] === false 
-            ) {
-            return false;
-        }
-        return true;
-}
+   
     if(preg_match($zipRegex, $ZIP))
     {
         return true;

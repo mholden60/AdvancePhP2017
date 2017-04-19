@@ -1,7 +1,7 @@
      <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">LAB 2</a>
+      <a class="navbar-brand" href="#">LAB 3</a>
     </div>
     <ul class="nav navbar-nav">
         <li class="active"><a href="login.php">Login</a></li>
@@ -17,6 +17,6 @@
         <br />
         password: <input type = "password" value="" name="password"/>
         <br />
-        <input type="submit" value="submit" />
+        <button type="submit" class="btn btn-default">Submit</button>
         </form>
         

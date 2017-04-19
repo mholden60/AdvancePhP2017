@@ -9,13 +9,18 @@
     </ul>
   </div>
 </nav>
-
+<div style="text-align: center">
 <h1>LOGIN</h1>
-<form action="#" method="post">
-        Email: <input type="text" value = "" name="email"/>
+<form action="#" method="post" class="form-horizontal">
+     
+     <div class="form-group">
+         <label> Email:</label> <input type="text" value = "" name="email" />
         <br />
-        password: <input type = "password" value="" name="password"/>
+        <label>Password:</label> <input type = "password" value="" name="password"/>
         <br />
-        <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        
+        <button type="submit" class="btn btn-default">Login</button>
+         </div></div>
+</form>
+
+       
+    

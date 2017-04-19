@@ -36,23 +36,36 @@ class Accounts extends DB {
     }
 
     public function login($email, $password) {
-          $db = $this->getDB();
+        $db = $this->getDB();
         $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
-       
+
         $binds = array(
             ":email" => $email
-            
         );
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if(password_verify($password, $results['password'])){
-            return $results['user_id'];
+
+            if (password_verify($password, $results['password'])) {
+                return $results['user_id'];
+            }
+            return false;
         }
-        return false;
-    }
 
         return 0;
     }
 
+    public function getUserEmailByUserID($user_id) {
+        
+$stmt = $this->getDb()->prepare("SELECT email FROM `users` WHERE user_id = :user_id");
+$binds = array(
+    ":user_id" => $user_id
+);
+            $results = array();
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+       $results = $stmt->fetch(PDO::FETCH_ASSOC);
+       return $results['email'];
+    }
+    return "";
+
+}
 }

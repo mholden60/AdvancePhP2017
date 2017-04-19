@@ -11,7 +11,7 @@
 </nav>
 <div style="text-align: center">
 <h1>LOGIN</h1>
-<form action="#" method="post" class="form-horizontal">
+<form action="#" method="post">
      
      <div class="form-group">
          <label> Email:</label> <input type="text" value = "" name="email" />

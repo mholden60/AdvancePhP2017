@@ -14,9 +14,9 @@
     <h1>SIGN UP</h1>
     <form action="#" method="post">
         <div class="form-group">
-            Email: <input type="text" value = "" name="email"/>
+           <label>  Email:</label>  <input type="text" value = "" name="email"/>
             <br />
-            password: <input type = "password" value="" name="password"/>
+          <label>   password:</label>  <input type = "password" value="" name="password"/>
             <br />
             <button type="submit" class="btn btn-default">Submit</button>
     </form>

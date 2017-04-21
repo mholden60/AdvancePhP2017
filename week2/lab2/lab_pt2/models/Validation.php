@@ -7,19 +7,19 @@
  */
 class Validation {
     //put your code here
-    function isZIPVALID($ZIP)
+    function isZipValid($zip)
 {
     $zipRegex = '/^[0-9]{5}$/';
     
-    if(preg_match($zipRegex, $ZIP))
+    if(preg_match($zipRegex, $zip))
     {
         return true;
     }
     return false;
 }
-function isDateValid($date)
+function isDateValid($birthday)
 {
-    return (bool) strtotime($date);
+    return (bool) strtotime($birthday);
 }
 function isValidEmail($email)
 {

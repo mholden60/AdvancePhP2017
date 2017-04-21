@@ -26,37 +26,34 @@ and open the template in the editor.
 
         if ($util->isPostRequest()) {
 
-             if(empty($email))
-                 {
-                    $errors[] = 'Email required';  
-                 }
-                 if(empty($password))
-                    {
-                    $errors[] = 'password required';  
-                 }  
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)==false)
-            {
+            if (empty($email)) {
+                $errors[] = 'Email required';
+            }
+            if (empty($password)) {
+                $errors[] = 'password required';
+            }
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
                 $errors[] = 'Email not vaild';
             }
-           
+
             $loginInfo = $accounts->login($email, $password);
 
             if ($loginInfo > 0) {
 
-                echo "YOUR LOGGED IN";
+
                 $_SESSION['user_id'] = $loginInfo;
                 $util->redirect("admin.php");
-            } 
-        }
-        else{
+            }
+            if ($loginInfo < 1) {
+                $errors[] = 'User does not Exist';
+            }
+        } else {
             
         }
 
-
+        include '../accounts/templates/messages.html.php';
+        include '../accounts/templates/errors.html.php';
         include './views/login.html.php';
-               include '../accounts/templates/messages.html.php';
-       include '../accounts/templates/errors.html.php';
-  
         ?>
     </body>
 </html>

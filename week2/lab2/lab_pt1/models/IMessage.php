@@ -18,7 +18,7 @@ public function removeMessage($key);
 
 public function getAllMessages();
 
-public function successMessage();
+//public function successMessage();
 
 
 }

@@ -32,7 +32,7 @@ and open the template in the editor.
         require_once './autoload.php';
        // include './autoload.php';
         
-        $addresses = new Crud();
+        $AddressCrud = new AddressCrud();
         $util = new util();
         $validation = new Validation();
         
@@ -68,18 +68,18 @@ and open the template in the editor.
             {
                 $errors[] = 'state is required';
             }
-            if($validation->isZIPVALID($zip))
+            if(!$validation->isZipValid($zip))
             {
                 $errors[] = 'Zipcode not valid';
             }
-            if($validation->isDateValid($birthday))
+            if(!$validation->isDateValid($birthday))
             {
               $errors[] = 'Birthday not valid';
 
             }
             if (count($errors)===0)
             {
-                if(createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday))
+                if($AddressCrud->createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday))
                 {
                     $message = 'Address Added';
                     $email = '';

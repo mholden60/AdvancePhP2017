@@ -5,11 +5,16 @@
  *
  * @author Mathew Holden
  */
-class AddressCrud implements ICrud {
+class AddressCrud extends DB {
+    
+    
+    function __construct() {
+        parent::__construct('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017', 'root','');
+    }
     //put your code here
-    public function create() {
+     function createAddress($fullname,$email,$addressline1,$city,$state,$zip,$birthday ) {
       
-    $stmt = $this->getDb()->$db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline1 = :addressline1, city = :city, state = :state, zip = :zip, birthday = :birthday");
+    $stmt = $this->getDb()->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline1 = :addressline1, city = :city, state = :state, zip = :zip, birthday = :birthday");
     $binds = array(
         ":fullname" => $fullname,
         ":email" => $email,
@@ -27,17 +32,10 @@ class AddressCrud implements ICrud {
    
     }
 
-    public function delete() {
-        $stmt = $db->prepare("DELETE From address WHERE address_id = $address_id");
-    }
 
-    public function read() {
-        
-    }
-
-    public function readAll() {
+     function readAll() {
        
-    $stmt =  $this->getDb()->$db->prepare("SELECT * FROM address");
+    $stmt =  $this->getDb()->prepare("SELECT * FROM address");
     
     $results = array();
     if ($stmt->execute() && $stmt->rowCount() > 0) {
@@ -49,8 +47,5 @@ class AddressCrud implements ICrud {
            
     }
 
-    public function update() {
-        
-    }
 
 }

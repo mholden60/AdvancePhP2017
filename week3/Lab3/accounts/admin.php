@@ -15,7 +15,7 @@ and open the template in the editor.
         session_start();
         include './autoload.php';
         include './templates/access-restricted.html.php'; 
-       
+         include './templates/logout.html.php';
         
         $valid = new Accounts();
         ?> 
@@ -24,7 +24,7 @@ and open the template in the editor.
                 <h1>ADMIN PAGE</h1>
                 <h2>Welcome</h2>
                 <div
-                    <?php include './templates/logout.html.php';?>
+                 
                  
                 
             </div>

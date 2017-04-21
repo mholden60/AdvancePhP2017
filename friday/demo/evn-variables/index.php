@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-        // phpinfo(); //to see the values
+         phpinfo(); //to see the values
         
         /*
          * Variable in htaccess file must start with HTTP_

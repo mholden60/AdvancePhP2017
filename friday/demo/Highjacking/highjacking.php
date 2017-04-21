@@ -22,7 +22,7 @@
     <body>
         
         
-        <iframe src="iframe.php"></iframe>
+        <iframe src="https://www.google.com/"></iframe>
         <a href="#" onclick="alert('tricked you HAHAHA!');">Visit here</a>
     </body>
 </html>

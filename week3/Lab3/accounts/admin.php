@@ -32,9 +32,11 @@ and open the template in the editor.
         <div style="text-align: center">
         <div class="alert alert-dismissible alert-success" style="font-size: 25px">
             <div style="text-align: center">
-            <?php echo $valid->getUserEmailByUserID($_SESSION['user_id']); ?>
+            <?php echo "The Admin Email is ";
+            echo $valid->getUserEmailByUserID($_SESSION['user_id']); ?>
             <br />
-            <?php echo $_SESSION['user_id']; ?>
+            <?php echo "The Admin UserID is "; 
+            echo $_SESSION['user_id']; ?>
         </div></div>
     </div>
 </div>

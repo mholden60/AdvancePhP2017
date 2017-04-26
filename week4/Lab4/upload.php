@@ -2,6 +2,7 @@
 <html>
     <head>
         <title></title>
+        <link rel="stylesheet" href="../Lab4/css/css/bootstrap.css" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     </head>
@@ -47,7 +48,8 @@
                     'jpg' => 'image/jpeg',
                     'png' => 'image/png',
                     'gif' => 'image/gif',
-                    'docx'=> 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                     'docx'=> 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'txt'=>'text/plain'
                 );
                 $ext = array_search($finfo->file($_FILES[$keyName]['tmp_name']), $validExts, true);
 
@@ -91,6 +93,7 @@
         <?php else: ?>
             <p><?php echo $error; ?></p>
         <?php endif; ?>
+            <a href="fileView.php">View Images</a>
 
     </body>
 </html>

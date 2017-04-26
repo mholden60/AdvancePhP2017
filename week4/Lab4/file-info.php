@@ -7,13 +7,13 @@
     <body>
         <?php
         /* ****************UPDATE FILE**************** */        
-        $file = '.'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.'img_8c2ce4918b4a22324885fc1ee7a5c3f0866b09dc.jpg';
+       // $file = '.'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.'img_8c2ce4918b4a22324885fc1ee7a5c3f0866b09dc.jpg';
         
         //http://php.net/manual/en/fileinfo.constants.php
         $finfo = new finfo(FILEINFO_MIME_TYPE);
         $type = $finfo->file($file);
         
-        var_dump($type, '<br /><br />');
+      //  var_dump($type, '<br /><br />');
         
         //http://php.net/manual/en/function.filesize.php
         var_dump(filesize($file), '<br /><br />');

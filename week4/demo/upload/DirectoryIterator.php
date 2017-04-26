@@ -20,12 +20,14 @@
         <?php foreach ($directory as $fileInfo) : ?>        
             <?php if ( $fileInfo->isFile() ) : ?>
                 <h2><?php echo $fileInfo->getFilename(); ?></h2>
-                <p>uploaded on <?php echo date("l F j, Y, g:i a", $fileInfo->getMTime()); ?></p>
+                <p>uploaded on <?php echo date(" T l F j, Y, g:i a", $fileInfo->getMTime()); ?></p>
                 <p>This file is <?php echo $fileInfo->getSize(); ?> byte's</p>
                 <img src="<?php echo $fileInfo->getPathname(); ?>" />
             <?php endif; ?>
         <?php endforeach; ?>
-        
+        <?php
+echo '<input type="button" value="Delete" onClick="if(confirm("Are you sure?")){ window.location=\'CHANGE_TO_FILENAME.php?delete='.$fileinfo.'\'; }">';
+?>
 
     </body>
 </html>

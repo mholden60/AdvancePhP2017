@@ -2,23 +2,24 @@
 <html>
     <head>
         <title></title>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li >  <a href="upload-form.php">Upload File</a></li>
+            <li><a href="DirectoryIterator.php">View Files</a></li>
+            <a href=""></a>
+    </ul></div></div>
+            </nav>
+                <div class="jumbotron" style="text-align: center"><h2>FILE</h2></div>
         <link rel="stylesheet" href="../Lab4/css/css/bootstrap.css" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     </head>
     <body>
         <?php
-        /*
-         * make sure php_fileinfo.dll extension is enable in php.ini
-         */
-
         class Filehandler {
 
             function upLoad($keyName) {
 
-
-                // Undefined | Multiple Files | $_FILES Corruption Attack
-                // If this request falls under any of them, treat it invalid.
                 if (!isset($_FILES[$keyName]['error']) || is_array($_FILES[$keyName]['error'])) {
                     throw new RuntimeException('Invalid parameters.');
                 }
@@ -28,17 +29,17 @@
                     case UPLOAD_ERR_OK:
                         break;
                     case UPLOAD_ERR_NO_FILE:
-                        throw new RuntimeException('No file sent.');
+                        throw new RuntimeException('<div class="alert alert-dismissible alert-danger"style="text-align: center" ><h2>
+No file sent!</h2></div>');
                     case UPLOAD_ERR_INI_SIZE:
                     case UPLOAD_ERR_FORM_SIZE:
-                        throw new RuntimeException('Exceeded filesize limit.');
+                        throw new RuntimeException('<div class="alert alert-dismissible alert-danger"style="text-align: center" ><h2>Exceeded filesize limit!</h2></div>');
                     default:
-                        throw new RuntimeException('Unknown errors.');
+                        throw new RuntimeException('<div class="alert alert-dismissible alert-danger"style="text-align: center" ><h2>Unknown errors!</h2></div>');
                 }
 
-                // You should also check filesize here. 
                 if ($_FILES[$keyName]['size'] > 1000000) {
-                    throw new RuntimeException('Exceeded filesize limit.');
+                    throw new RuntimeException('<div class="alert alert-dismissible alert-danger"style="text-align: center" ><h2>Exceeded filesize limit!</h2></div>');
                 }
 
                 // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
@@ -48,8 +49,13 @@
                     'jpg' => 'image/jpeg',
                     'png' => 'image/png',
                     'gif' => 'image/gif',
+                    'doc'=>'application/mseord',
                      'docx'=> 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                    'txt'=>'text/plain'
+                    'txt'=>'text/plain',
+                    'xls'=>'application/vnf.md-excel',
+                    'xlsx'=>'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                    'html'=>'text/html',
+                    'pdf'=>'application/pdf'
                 );
                 $ext = array_search($finfo->file($_FILES[$keyName]['tmp_name']), $validExts, true);
 
@@ -69,6 +75,7 @@
                 if (!is_dir('./uploads')) {
                     mkdir('./uploads');
                 }
+
 
                 if (!move_uploaded_file($_FILES[$keyName]['tmp_name'], $location)) {
                     throw new RuntimeException('Failed to move uploaded file.');
@@ -93,7 +100,7 @@
         <?php else: ?>
             <p><?php echo $error; ?></p>
         <?php endif; ?>
-            <a href="fileView.php">View Images</a>
+           
 
     </body>
 </html>

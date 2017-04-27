@@ -2,6 +2,13 @@
 <html>
     <head>
         <title></title>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li >  <a href="upload-form.php">Upload File</a></li>
+            <li><a href="fileView.php">View Files</a></li>
+            <a href=""></a>
+        </ul></div></div>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     </head>

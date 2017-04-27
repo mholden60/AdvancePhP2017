@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li >  <a href="upload-form.php">Upload File</a></li>
-            <li><a href="fileView.php">View Files</a></li>
+            <li><a href="DirectoryIterator.php">View Files</a></li>
             <a href=""></a>
     </ul></div></div>
             </nav>

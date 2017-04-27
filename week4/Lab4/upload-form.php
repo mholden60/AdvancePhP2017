@@ -15,7 +15,6 @@
     </head>
     <body>
         <div style="text-align: center">
-            <!-- The data encoding type, enctype, MUST be specified as below -->
             <form enctype="multipart/form-data" action="upload.php" method="POST">
                 <div><label for="upload">Select file to upload:
                         <input type="file" id="upload" name="upfile">

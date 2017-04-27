@@ -96,7 +96,7 @@ No file sent!</h2></div>');
         ?>
 
         <?php if ( isset($fileName) ) : ?>
-            <h2><?php echo $fileName; ?> is uploaded successfully.</h2>
+        <div class="alert alert-dismissible alert-success" style="text-align: center"><h3><?php echo $fileName; ?> is uploaded successfully.</h3></div>
         <?php else: ?>
             <p><?php echo $error; ?></p>
         <?php endif; ?>

@@ -1,6 +1,8 @@
 <?php
-
-class AddressResoruce extends DBSpring implements IRestModel {
+/**
+ * Lets implement the REST CRUD model for our API
+ */
+class AddressResource extends DBSpring implements IRestModel {
     
     public function getAll() {
         $stmt = $this->getDb()->prepare("SELECT * FROM address");

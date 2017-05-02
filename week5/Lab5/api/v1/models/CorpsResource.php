@@ -1,6 +1,6 @@
 <?php
 
-class Corporations extends DBSpring implements IRestModel {
+class CorpsResource extends DBSpring implements IRestModel {
 
     //put your code here
     public function getAll() {
@@ -30,9 +30,9 @@ class Corporations extends DBSpring implements IRestModel {
         $binds = array(
             ":corp"=> $serverData['corp'],
             ":incorp_dt"=> $serverData['incorp_dt'],
+            ":email"=> $serverData['email'],
             ":owner"=> $serverData['owner'],
             ":phone"=> $serverData['phone'],
-            ":email"=> $serverData['email'],
             ":location"=> $serverData['location'],
              );
          if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
@@ -40,9 +40,9 @@ class Corporations extends DBSpring implements IRestModel {
         } 
         return false;
     }
-        public function put($serverData)
+        public function put($serverData, $id)
     {
-        $stmt = $this->getDB()->prepare("update INTO corps SET corp = :corp, incorp_dt = :incorp_dt, email = :email, owner = :owner, phone = :phone, location = :location WHERE id=:id");
+        $stmt = $this->getDB()->prepare("UPDATE corps SET corp = :corp, incorp_dt = :incorp_dt, email = :email, owner = :owner, phone = :phone, location = :location WHERE id=:id");
         $binds = array(
             ":id"=>$id,
             ":corp"=> $serverData['corp'],
@@ -61,7 +61,7 @@ class Corporations extends DBSpring implements IRestModel {
     {
         $stmt = $this->getDB()->prepare("DELETE FROM corps WHERE id=:id");
         $binds = array(
-            ":id"=>$id,
+            ":id"=>$id
         );
           if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             return true;

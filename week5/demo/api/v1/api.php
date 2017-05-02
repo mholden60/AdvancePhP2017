@@ -17,20 +17,12 @@ try {
     $id = $restServer->getId();
     $serverData = $restServer->getServerData();
     
-       
-    /* 
-     * You can add resoruces that will be handled by the server 
-     * 
-     * There are clever ways to use advanced variables to sort of
-     * generalize the code below. That would also require that all
-     * resoruces follow the same standard. Interfaces can ensure that.
-     * 
-     * But in this example we will just code it out.
-     * 
-     */
+    
+    
+    
     if ( 'address' === $resource ) {
         
-        $resourceData = new AddressResoruce();
+        $resourceData = new AddressResource();
         
         if ( 'GET' === $verb ) {
             

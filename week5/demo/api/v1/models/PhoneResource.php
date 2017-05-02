@@ -2,10 +2,11 @@
 
 /**
  * Description of PhoneResoruce
+ * Lets implement the REST CRUD model for our API
  *
  * @author GFORTI
  */
-class PhoneResoruce extends DBSpring implements IRestModel {
+class PhoneResource extends DBSpring implements IRestModel {
     
     public function getAll() {
         $stmt = $this->getDb()->prepare("SELECT * FROM phone");

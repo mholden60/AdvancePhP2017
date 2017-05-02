@@ -32,20 +32,19 @@
         <br />
         <br />
         Data(optional):<br />   
-        fullname <input type="text" name="fullname" value="" />
+        Corporation <input type="text" name="corp" value="" />
         <br />
-        email <input type="email" name="email" value="" />
+        incorp_dt <input type="email" name="incorp_dt" value="" />
         <br />
-        addressline1 <input type="text" name="addressline1" value="" />
+        Email <input type="text" name="email" value="" />
         <br />
-        city <input type="text" name="city" value="" />
+        Owner <input type="text" name="owner" value="" />
         <br />
-        state <input type="text" name="state" list="states" placeholder="Find U.S. State">
+        Phone <input type="number" name="phone" value="">
         <br />
-        zip <input type="number" pattern="[0-9]*" maxlength="5" min="0" name="zip">
+        Location <input type="text" name="location">
         <br />
-        birthday <input type="date" name="birthday">
-        <br />
+        
         <br />
         <button>Make Call</button>
         <h3>Results</h3>

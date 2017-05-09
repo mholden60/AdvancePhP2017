@@ -1,0 +1,13 @@
+<h1>Phones</h1>
+<!--Headings are defined with the <h1> to <h6> tags.
+<h1> defines the most important heading. <h6> defines the least important heading.-->
+<ul class="phone">
+    <li ng-repeat="phone in vm.phones">
+<!--        The "ng-repeat" directive repeats a set of HTML, a given number of times.-->
+        <a href="#/phones/{{phone.id}}">{{phone.name | uppercase}}<br/><img ng-src="{{phone.imageUrl}}"></a>
+    </li>
+</ul>
+<!--the anchor tag uses the url from the index.html/phones and takes the phoneid from each phone and adds them to the list, takes the name and makes it uppercase and lastly adds the image of each phone to the list-->
+<!--<ul> is an unordered list-->
+<!--<li> defines a list item-->
+<!--<img> is an img tag that defines an image in an HTML page-->

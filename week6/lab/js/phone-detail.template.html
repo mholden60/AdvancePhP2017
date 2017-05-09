@@ -1,0 +1,9 @@
+<h1>{{vm.phone.name | uppercase}}</h1>
+<div class="content">
+    <img ng-src="{{vm.phone.imageUrl}}"/>
+<!--    The ng-src directive makes sure the image is not displayed wrong before AngularJS has evaluated the code.-->
+    <p ng-if="vm.phone.carrier.length > 0"><strong>Carrier:</strong>{{vm.phone.carrier}}</p>
+<!--    The ng-if directive removes the HTML element if the expression evaluates to false-->
+    <p>{{vm.phone.snippet}}</p> 
+<!--    Snippets allow you to be more productive within source view by allowing you to create chunks of code and markup that you can quickly apply and use in your application with a minimum of character typing.-->
+</div>

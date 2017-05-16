@@ -12,21 +12,26 @@
     function CorpsController(CorpsService) {
         var vm = this;
 
-
         vm.corps = [];
-vm.deleteCorps = deleteCorps;
+        vm.deleteCorps = deleteCorps;
         vm.message = '';
+
         activate();
 
         ////////////
 
         function activate() {
-            AddressService.getAllCorps().then(function (response) {
-                 vm.message = 'Corps was Deleted';
+            CorpsService.getAllCorps().then(function (response) {
+                vm.corps = response;
+            });
+        }
+        
+        function deleteCorps(Id) {
+             CorpsService.deleteCorps(Id).then(function (response) {
+                vm.message = 'Corps Deleted';
                 activate();
-            },
-             function(error) {
-                vm.message = 'Corps was not Deleted';
+            }, function(error) {
+                vm.message = 'Corps was NOT Deleted';
             });
         }
 

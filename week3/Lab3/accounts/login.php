@@ -32,13 +32,14 @@ and open the template in the editor.
             if (empty($password)) {
                 $errors[] = 'password required';
             }
-            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                $errors[] = 'Email not vaild';
-            }
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $errors[] = "Invalid email format"; 
+}
+
 
             $loginInfo = $accounts->login($email, $password);
 
-            if ($loginInfo > 0) {
+           if ($loginInfo > 0) {
 
 
                 $_SESSION['user_id'] = $loginInfo;

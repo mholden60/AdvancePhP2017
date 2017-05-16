@@ -68,4 +68,11 @@ $binds = array(
     return "";
 
 }
+//**********************START HERE*******************************
+public function checkEmail($email) {
+    $stmt = $this->getDb()->prepare("SELECT email FROM `users` WHERE email = :email");
+    $binds = array(
+        ""
+    );
+}
 }

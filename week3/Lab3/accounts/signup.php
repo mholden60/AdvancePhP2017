@@ -27,14 +27,15 @@
             if (empty($password)) {
                 $errors[] = 'password required';
             }
-            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                $errors[] = 'Email not vaild';
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "Invalid email format";
             }
 
-
-            if ($accounts->signup($email, $password)) {
+            if (count($errors) == 0 && $accounts->signup($email, $password)) {
 
                 $util->redirect("login.php", array("email" => $email));
+            } else if (count($errors) == 0) {
+                $error[] = "signup did not work";
             }
         }
 

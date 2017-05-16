@@ -15,17 +15,17 @@
     function config($routeProvider) {
        $routeProvider.
             when('/corps', {
-                templateUrl: 'js/corps/corps.template.html',
+                templateUrl: 'js/corps.template.html',
                 controller: 'CorpsController',
                 controllerAs: 'vm'
             }).
-            when('/corps/:Id', {
-                templateUrl: 'js/corps/corps-detail.template.html',
+            when('/corps/:id', {
+                templateUrl: 'js/corps-detail.template.html',
                 controller: 'CorpsDetailController',
                 controllerAs: 'vm'
             }).
-            when('/address/delete/:corpsId', {
-                templateUrl:'js/corps/corps-delete.template.html',
+            when('/address/delete/:id', {
+                templateUrl:'js/corps-delete.template.html',
                 controller:'CorpsDeleteController',
                 controllerAs:'vm'
             });

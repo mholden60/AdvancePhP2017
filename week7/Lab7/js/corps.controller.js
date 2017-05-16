@@ -26,8 +26,8 @@
             });
         }
         
-        function deleteCorps(Id) {
-             CorpsService.deleteCorps(Id).then(function (response) {
+        function deleteCorps(id) {
+             CorpsService.deleteCorps(id).then(function (response) {
                 vm.message = 'Corps Deleted';
                 activate();
             }, function(error) {

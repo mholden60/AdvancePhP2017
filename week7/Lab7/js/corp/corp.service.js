@@ -2,24 +2,24 @@
 
     'use strict';
     angular
-            .module('app.corps')
-            .factory('CorpsService', CorpsService);
+            .module('app.corp')
+            .factory('CorpService', CorpService);
 
-    CorpsService.$inject = ['$http', 'REQUEST'];
+    CorpService.$inject = ['$http', 'REQUEST'];
 
     /*
      * We will do as much logic here as we can.
      */
-    function CorpsService($http, REQUEST) {
+    function CorpService($http, REQUEST) {
 
-        var url = REQUEST.Corps;
+        var url = REQUEST.Corp;
 
         var service = {
             'getAllCorps': getAllCorps,
-            'getCorps': getCorps,
-            'postCorps': postCorps,
-            'deleteCorps': deleteCorps,
-            'putCorps': putCorps
+            'getCorp': getCorp,
+            'postCorp': postCorp,
+            'deleteCorp': deleteCorp,
+            'putCorp': putCorp
 
         };
         return service;
@@ -36,7 +36,7 @@
                 return [];
             }
         }
-        function getCorps(id) {
+        function getCorp(id) {
             var _url = url + '/' + id;
 
             return $http.get(_url)
@@ -50,7 +50,7 @@
                 return {};
             }
         }
-        function postCorps(corp, incorp_dt, email, owner, phone, location) {
+        function postCorp(corp, incorp_dt, email, owner, phone, location) {
             var model = {};
             model.corp = corp;
             model.incorp_dt = incorp_dt;
@@ -60,7 +60,7 @@
             model.location = location;
             return $http.post(url, model);
         }
-        function deleteCorps(id) {
+        function deleteCorp(id) {
             var _url = url + '/' + id;
             return $http.delete(_url);
         }

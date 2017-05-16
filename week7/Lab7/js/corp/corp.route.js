@@ -2,7 +2,7 @@
     
     'use strict';
     angular
-        .module('app.corps')
+        .module('app.corp')
         .config(config);
   
     config.$inject = ['$routeProvider'];
@@ -14,18 +14,18 @@
      */
     function config($routeProvider) {
        $routeProvider.
-            when('/corps', {
-                templateUrl: 'js/corps.template.html',
-                controller: 'CorpsController',
+            when('/corp', {
+                templateUrl: 'js/corp/corps.template.html',
+                controller: 'CorpController',
                 controllerAs: 'vm'
             }).
-            when('/corps/:id', {
-                templateUrl: 'js/corps-detail.template.html',
-                controller: 'CorpsDetailController',
+            when('/corp/:corpID', {
+                templateUrl: 'js/corp/corp-detail.template.html',
+                controller: 'CorpDetailController',
                 controllerAs: 'vm'
             }).
-            when('/corps/delete/:id', {
-                templateUrl:'js/corps-delete.template.html',
+            when('/corp/delete/:id', {
+                templateUrl:'js/corp-delete.template.html',
                 controller:'CorpsDeleteController',
                 controllerAs:'vm'
             });

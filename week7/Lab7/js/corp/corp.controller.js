@@ -2,18 +2,18 @@
     
     'use strict';
     angular
-        .module('app.corps')
-        .controller('CorpsController', CorpsController);
+        .module('app.corp')
+        .controller('CorpController', CorpController);
 
-    CorpsController.$inject = ['CorpsService'];
+    CorpController.$inject = ['CorpService'];
     /*
      * Simple controller to get information for the view.
      */
-    function CorpsController(CorpsService) {
+    function CorpController(CorpService) {
         var vm = this;
 
         vm.corps = [];
-        vm.deleteCorps = deleteCorps;
+        vm.deleteCorp = deleteCorp;
         vm.message = '';
 
         activate();
@@ -21,13 +21,13 @@
         ////////////
 
         function activate() {
-            CorpsService.getAllCorps().then(function (response) {
+            CorpService.getAllCorps().then(function (response) {
                 vm.corps = response;
             });
         }
         
-        function deleteCorps(id) {
-             CorpsService.deleteCorps(id).then(function (response) {
+        function deleteCorp(id) {
+             CorpService.deleteCorp(id).then(function (response) {
                 vm.message = 'Corps Deleted';
                 activate();
             }, function(error) {

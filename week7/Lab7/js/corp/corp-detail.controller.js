@@ -2,30 +2,33 @@
     
     'use strict';
     angular
-        .module('app.corps')
-        .controller('CorpsDetailController', CorpsDetailController);
+        .module('app.corp')
+        .controller('CorpDetailController', CorpDetailController);
 
-    CorpsDetailController.$inject = ['$routeParams','CorpsService'];
+    CorpDetailController.$inject = ['$routeParams','CorpService'];
 
     /*
      * This controller will find the details of an address from the address service.
      */
-    function CorpsDetailController($routeParams, CorpsService) {
+    function CorpDetailController($routeParams, CorpService) {
         var vm = this;
 
-        vm.corps = {};
-        var corpsID = $routeParams.id;
+        vm.corp = {};
+        var corpID = $routeParams.corpID;
 
         activate();
 
         ////////////
 
         function activate() {
-            CorpsService.getCorps(corpsID).then(function (response) {
-                vm.corps = response;
-                
-                console.log(vm.corps);                
-                loadMap(vm.corps.location);
+            CorpService.getCorp(corpID).then(function (response) {
+                vm.corp = response;
+                if(vm.hasOwnProperty('incorp_dt'))
+                {
+                    vm.corp.incorp_dt = new Date(vm.corp.incorp_dt);
+                }
+                console.log(vm.corp);                
+                loadMap(vm.corp.location);
             });
         }
                

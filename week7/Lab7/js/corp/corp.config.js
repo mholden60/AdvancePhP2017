@@ -3,9 +3,9 @@
     'use strict';
 
     angular
-        .module('app.corps')
+        .module('app.corp')
         .constant('REQUEST', {
-            //'Corps' : '../../week5/lab/api/v1/corps'
+            'Corp' : '../PhpProject1/week5/Lab5/api/v1/corps'
         });
         
 })();

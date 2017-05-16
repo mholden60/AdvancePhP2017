@@ -24,7 +24,7 @@
                 controller: 'CorpsDetailController',
                 controllerAs: 'vm'
             }).
-            when('/address/delete/:id', {
+            when('/corps/delete/:id', {
                 templateUrl:'js/corps-delete.template.html',
                 controller:'CorpsDeleteController',
                 controllerAs:'vm'

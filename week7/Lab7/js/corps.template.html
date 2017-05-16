@@ -1,31 +1,31 @@
-<h1>Address Table</h1>
+<h1>Corps Table</h1>
 
 <div class="content">
-    
+
     <h3>Search</h3>
     <input ng-model="searchText">
     <br />
     <br /> 
-    
+
     <table id="searchTextResults" class="gridtable">
         <thead>
             <tr>
                 <th>Corp</th>
                 <th>Email</th>                
                 <th>Owner</th>
-                
+
             </tr>
         </thead>    
-        
+
         <tr ng-repeat="corps in vm.corps">
-                        <td>{{corps.corp}}</td>                  
+            <td>{{corps.corp}}</td>                  
             <td>{{corps.email}}</td>
             <td>{{corps.owner}}</td>
-          <td><a ng-href="#/corps/{{corps.id}}">View</a></td>
+            <td><a ng-href="#/corps/{{corps.id}}">View</a></td>
             <td><a ng-href="#/corps/delete/{{corps.id}}" data-confirm-delete>Delete Link</a></td>
             <td><button ng-click="vm.deleteCorps(corps.id)">Delete</button></td>
         </tr>
     </table>
-        
+
 </div>
 

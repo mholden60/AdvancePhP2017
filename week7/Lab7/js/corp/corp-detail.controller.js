@@ -23,10 +23,10 @@
         function activate() {
             CorpService.getCorp(corpID).then(function (response) {
                 vm.corp = response;
-                if(vm.hasOwnProperty('incorp_dt'))
-                {
-                    vm.corp.incorp_dt = new Date(vm.corp.incorp_dt);
-                }
+//                if(vm.hasOwnProperty('incorp_dt'))
+//                {
+//                    vm.corp.incorp_dt = new Date(vm.corp.incorp_dt);
+//                }
                 console.log(vm.corp);                
                 loadMap(vm.corp.location);
             });

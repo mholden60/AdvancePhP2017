@@ -64,8 +64,9 @@
             var _url = url + '/' + id;
             return $http.delete(_url);
         }
-        function putCorps(id, corp, incorp_dt, email, owner, phone, location) {
+        function putCorp(id, corp, incorp_dt, email, owner, phone, location) {
             var _url = url + '/' + id;
+            var model = {};
             model.corp = corp;
             model.incorp_dt = incorp_dt;
             model.email = email;

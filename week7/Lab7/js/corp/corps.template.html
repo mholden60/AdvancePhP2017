@@ -18,13 +18,13 @@
             </tr>
         </thead>    
 
-        <tr ng-repeat="corp in vm.corps">
+        <tr ng-repeat="corp in vm.corps | filter:searchText">
             <td>{{corp.corp}}</td>                  
             <td>{{corp.email}}</td>
             <td>{{corp.owner}}</td>
-            <td><a ng-href="#/corps/{{corp.id}}">View</a></td>
-            <td><a ng-href="#/corps/delete/{{corp.id}}" data-confirm-delete>Delete Link</a></td>
-            <td><button ng-click="vm.deleteCorp(corp.id)">Delete</button></td>
+            <td><a ng-href="#/corp/{{corp.id}}">View</a></td>
+<!--            <td><a ng-href="#/corp/delete/{{corp.id}}" data-confirm-delete>Delete Link</a></td>-->
+<!--            <td><button ng-click="vm.deleteCorp(corp.id)">Delete</button></td>-->
         </tr>
     </table>
 

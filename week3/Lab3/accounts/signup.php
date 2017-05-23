@@ -30,7 +30,10 @@
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = "Invalid email format";
             }
-
+if($accounts->checkEmail($email))
+{
+    $errors[] = 'Email already exists, try again!';
+}
             if (count($errors) == 0 && $accounts->signup($email, $password)) {
 
                 $util->redirect("login.php", array("email" => $email));

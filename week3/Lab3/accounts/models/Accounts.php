@@ -70,9 +70,14 @@ $binds = array(
 }
 //**********************START HERE*******************************
 public function checkEmail($email) {
-    $stmt = $this->getDb()->prepare("SELECT email FROM `users` WHERE email = :email");
+    $stmt = $this->getDb()->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
     $binds = array(
-        ""
+        ":email"=>$email
     );
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+       return true;
+    }
+    return false;
 }
+
 }

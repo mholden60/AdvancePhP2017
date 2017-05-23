@@ -30,4 +30,15 @@ function isValidPhone($phone)
 {
      return ( preg_match("/^\(?([2-9]{1}[0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/", $phone) );
 }
+//function userExists()
+//{
+//    $query = mysql_query("SELECT email FROM users WHERE email='email'");
+//
+//  if (mysql_num_rows($query) != 0)
+//  {
+//      echo "Username already exists";
+//  }
+//
+//}
+
 }

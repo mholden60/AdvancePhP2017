@@ -22,6 +22,7 @@
          * it's better to check if a class is an instance of an interface rather than
          * the class it was created from.
          */
+        var_dump($triangle);
         var_dump($square instanceof IShapes);
         var_dump($triangle instanceof IShapes);
         

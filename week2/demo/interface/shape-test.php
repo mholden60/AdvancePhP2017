@@ -13,7 +13,8 @@
         
         $square = new Square();
         $triangle = new Triangle();
-        
+        var_dump($triangle);
+        echo Triangle::
         //var_dump($square);
         
         /*
